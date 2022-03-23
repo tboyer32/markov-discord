@@ -1,0 +1,4 @@
+secrets.sh
+*.pyc
+.DS_Store
+env
