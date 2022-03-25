@@ -69,8 +69,6 @@ text = open_and_read_file(filenames)
 chains = make_chains(text)
 
 
-token = os.environ['DISCORD_TOKEN']
-
 client = discord.Client()
 
 @client.event
@@ -83,7 +81,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('$hello'):
-        await message.channel.send('Hello!')
+        await message.channel.send(make_text(chains))
 
-client.run(token)
+client.run(os.environ['DISCORD_TOKEN'])
 
